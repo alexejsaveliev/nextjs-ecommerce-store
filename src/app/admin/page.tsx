@@ -1,0 +1,100 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import db from '@/db/db';
+import { formatCurrency, formatNumber } from '@/lib/formatters';
+
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const getSalesData = async () => {
+  const data = await db.order.aggregate({
+    _sum: { pricePaidInCents: true },
+    _count: true,
+  });
+
+  return {
+    amount: (data._sum.pricePaidInCents || 0) / 100,
+    numberOfSales: data._count || 0,
+  };
+};
+
+const getUserData = async () => {
+  const [userCount, orderData] = await Promise.all([
+    db.user.count(),
+    db.order.aggregate({
+      _sum: { pricePaidInCents: true },
+    }),
+  ]);
+
+  return {
+    userCount,
+    averageValuePerUser:
+      userCount === 0
+        ? 0
+        : (orderData._sum.pricePaidInCents || 0) / userCount / 100,
+  };
+};
+
+const getProductData = async () => {
+  const [activeCount, inActiveCount] = await Promise.all([
+    db.product.count({ where: { isAvailableForPurchase: true } }),
+    db.product.count({ where: { isAvailableForPurchase: false } }),
+  ]);
+
+  return {
+    activeCount,
+    inActiveCount,
+  };
+};
+
+export default async function AdminDashboard() {
+  const [salesData, userData, productsData] = await Promise.all([
+    getSalesData(),
+    getUserData(),
+    getProductData(),
+  ]);
+
+  return (
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <DashboardCard
+        title="Sales"
+        subtitle={`${formatNumber(salesData.numberOfSales)} Orders`}
+        body={formatCurrency(salesData.amount)}
+      />
+      <DashboardCard
+        title="Customer"
+        subtitle={`${formatCurrency(userData.averageValuePerUser)} Average Value`}
+        body={formatNumber(userData.userCount)}
+      />
+      <DashboardCard
+        title="Products"
+        subtitle={`${formatNumber(productsData.inActiveCount)} Inactive`}
+        body={formatNumber(productsData.activeCount)}
+      />
+    </div>
+  );
+}
+
+type CardProps = {
+  title: string;
+  subtitle: string;
+  body: string;
+};
+
+function DashboardCard({ title, subtitle, body }: CardProps) {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{subtitle}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>{body}</p>
+      </CardContent>
+    </Card>
+  );
+}
