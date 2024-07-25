@@ -115,9 +115,6 @@ Aleksey Savelyev - [LinkedIn](https://www.linkedin.com/in/alexejsaveliev/)
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
@@ -127,8 +124,8 @@ Aleksey Savelyev - [LinkedIn](https://www.linkedin.com/in/alexejsaveliev/)
 [Prisma.js]: https://img.shields.io/badge/prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white
 [Prisma-url]: https://www.prisma.io/
 [Shadcn]: https://img.shields.io/badge/shadcn-000000?style=for-the-badge&logo=shadcn&logoColor=white
-[Shadcn-url]: https://www.shadcn.com/
+[Shadcn-url]: https://ui.shadcn.com/
 [Stripe]: https://img.shields.io/badge/stripe-675dff?style=for-the-badge&logo=stripe&logoColor=white
 [Stripe-url]: https://stripe.com/
 [Resend]: https://img.shields.io/badge/resend-FFA500?style=for-the-badge&logo=resend&logoColor=white
-[Resend-url]: https://resend.io/
+[Resend-url]: https://resend.com/
