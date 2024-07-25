@@ -16,6 +16,9 @@ export async function userOrderExists(email: string, productId: string) {
     .findFirst({
       where: {
         productId,
+        user: {
+          email,
+        },
       },
       select: {
         id: true,
