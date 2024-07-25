@@ -40,8 +40,6 @@ This is a minimal ecommerce store app built with Next.js and React. It has the f
 - Payment processing
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Built With
 
 - [![Next][Next.js]][Next-url]
@@ -51,8 +49,6 @@ This is a minimal ecommerce store app built with Next.js and React. It has the f
 - [![Shadcn][Shadcn]][Shadcn-url]
 - [![Stripe][Stripe]][Stripe-url]
 - [![Resend][Resend]][Resend-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -110,8 +106,6 @@ To get a local copy up and running follow these simple steps.
    ```sh
    pnpm email
    ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Contact
