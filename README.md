@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-<h3 align="center">E-commerce Store</h3>
+<h3 align="center">Ecommerce Store</h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
