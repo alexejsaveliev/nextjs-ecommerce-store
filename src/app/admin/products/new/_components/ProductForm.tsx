@@ -6,10 +6,7 @@ import { useState } from 'react';
 import { formatCurrency } from '@/lib/formatters';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import {
-  addProduct,
-  updateProduct,
-} from '@/app/admin/products/new/_actions/products';
+import { addProduct, updateProduct } from '@/app/admin/_actions/products';
 import { useFormState, useFormStatus } from 'react-dom';
 import { Product } from '@prisma/client';
 import Image from 'next/image';
