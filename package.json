@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "preinstall": "npx only-allow pnpm",
-    "email": "cp .env ./node_modules/react-email && email dev --dir src/email --port 3001",
+    "email": "cp .env.local ./node_modules/react-email && email dev --dir src/email --port 3001",
     "postinstall": "prisma generate"
   },
   "dependencies": {

@@ -86,7 +86,7 @@ To get a local copy up and running follow these simple steps.
     RESEND_SENDER_EMAIL="resend_sender_email"
 
     NEXT_PUBLIC_STRIPE_PUBLIC_KEY="stripe_public"
-    NEXT_PUBLIC_BASE_URL="http://localhost:3000"
+    NEXT_PUBLIC_VERCEL_URL="http://localhost:3000"
    ```
 
 5. Prepare the database

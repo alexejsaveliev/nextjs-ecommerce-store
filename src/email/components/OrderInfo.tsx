@@ -61,7 +61,7 @@ export function OrderInfo({
         <Img
           className="mx-auto w-full md:w-1/2"
           width="100%"
-          src={`${process.env.NEXT_PUBLIC_BASE_URL}/${product.imagePath}`}
+          src={`${process.env.NEXT_PUBLIC_VERCEL_URL}/${product.imagePath}`}
           alt={`Image of ${product.name}`}
         />
         <Row className="mt-8">
@@ -70,7 +70,7 @@ export function OrderInfo({
           </Column>
           <Column align="right">
             <Button
-              href={`${process.env.NEXT_PUBLIC_BASE_URL}/products/download/${downloadVerificationId}`}
+              href={`${process.env.NEXT_PUBLIC_VERCEL_URL}/products/download/${downloadVerificationId}`}
               className="rounded bg-black px-6 py-4 text-lg text-white"
             >
               Download
